@@ -87,7 +87,7 @@ if __name__ == '__main__':
         'CitationBERT': CitationBERT,
         'CitationGAT': CitationGAT,
         'CitationBERTGAT': CitationBERTGAT,
-        'CitationBERTGraphSAGE': CitationBERTGraphSAGE,
+        # 'CitationBERTGraphSAGE': CitationBERTGraphSAGE,
         'CitationMLP': CitationMLP
     }
     classes_toadd = 0
@@ -108,7 +108,8 @@ if __name__ == '__main__':
     if args.venues:
         params['add_venues'] = args.venues
         classes_toadd += 1
-    set_seed(args.seed)
+    # set_seed(args.seed)
+    set_seed(0)
     params['model_location'] = params['model']+params['dataset']+"B"+ str(params['batch_size'])+"E"+str(params['epochs'])+"S"+str(params['seed'])+"LR"+str(params['learning_rate'])
     if not os.path.exists(params['model_location']):
         os.mkdir(params['model_location'])
@@ -116,11 +117,10 @@ if __name__ == '__main__':
     f.write(json.dumps(params))
     f.write("\n")
     training_stats = []
-    print(params)
 
-    sentence_trans = SentenceTransformer('allenai/scibert_scivocab_uncased')
+    sentence_trans = SentenceTransformer('./scibert_scivocab_uncased_sentence-transformers')
 
-    tokenizer = AutoTokenizer.from_pretrained('allenai/scibert_scivocab_uncased')
+    tokenizer = AutoTokenizer.from_pretrained('./scibert_scivocab_uncased_sentence-transformers')
 
     # we store in all_nodes information on the id in the first list and then in the second the title of the paper
     all_nodes = ([], [])

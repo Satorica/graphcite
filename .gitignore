@@ -1,0 +1,73 @@
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# 模型和检查点目录
+CitationBERTGATsciciteB16E10S0LR2e-05/
+CitationBERTGATacl-arcB16E10S0LR2e-05/
+CitationBERTGATacl-arcB16E5S0LR2e-05/
+scibert_scivocab_uncased/
+scibert_scivocab_uncased_sentence-transformers/
+
+# 模型和大型数据文件
+*.npy
+*.h5
+*.hdf5
+*.pkl
+*.model
+*.bin
+*.pt
+*.pth
+
+# 数据集和压缩文件
+*.tar.gz
+*.zip
+*.rar
+*.7z
+acl-arc/
+scicite/
+
+# 大型安装文件
+Anaconda3-2023.09-0-Linux-x86_64.sh
+
+# 系统文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+temp.txt
+
+# 不忽略的文件类型（这些将被Git跟踪）
+!*.py
+!*.sh
+!requirements.txt
+!README.md
+!LICENSE
+!*.md 

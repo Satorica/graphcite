@@ -23,7 +23,7 @@ intent2intACL = {
 def read_acl(path, nodes, edges, node2nodeid, authors, venues):
 
     papers = {}
-    rb = open("acl-arc/papers_info.jsonl", "r", encoding="utf-8")
+    rb = open("acl-arc/papers_full.jsonl", "r", encoding="utf-8")
     for line in rb.readlines():
         paper = json.loads(line.strip())
         if 'paperId' not in paper:

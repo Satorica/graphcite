@@ -193,7 +193,7 @@ class CitationGAT(torch.nn.Module):
 class CitationBERTGAT(torch.nn.Module):
   def __init__(self, num_features, num_classes, hidden_channels, graph):
       super(CitationBERTGAT, self).__init__()
-      self.bert = AutoModel.from_pretrained('allenai/scibert_scivocab_uncased')
+      self.bert = AutoModel.from_pretrained('./scibert_scivocab_uncased')
 
       self.dropout = Dropout(0.1)
       self.merged = Linear(hidden_channels + 768, hidden_channels)  # set up the other FC layer
